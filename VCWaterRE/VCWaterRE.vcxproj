@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FD1B09DF-2C49-40EC-B8B4-6784F6C869F9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>VCWaterRE</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.asi</TargetExt>
+    <IncludePath>.\Game\RW34\include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <TargetName>VCWaterEx</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;VCWATERRE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level1</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;VCWATERRE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>false</OptimizeReferences>
+    </Link>
+    <PreBuildEvent>
+      <Command>buildnumber.exe</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CWaterLevelEx.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Errors.cpp" />
+    <ClCompile Include="Game\CBoat.cpp" />
+    <ClCompile Include="Game\CCamera.cpp" />
+    <ClCompile Include="Game\CClock.cpp" />
+    <ClCompile Include="Game\CCullZones.cpp" />
+    <ClCompile Include="Game\cDMAudio.cpp" />
+    <ClCompile Include="Game\CDraw.cpp" />
+    <ClCompile Include="Game\CFileMgr.cpp" />
+    <ClCompile Include="Game\CGame.cpp" />
+    <ClCompile Include="Game\CGeneral.cpp" />
+    <ClCompile Include="Game\CMatrix.cpp" />
+    <ClCompile Include="Game\CMBlur.cpp" />
+    <ClCompile Include="Game\CModelInfo.cpp" />
+    <ClCompile Include="Game\COcclusion.cpp" />
+    <ClCompile Include="Game\CParticle.cpp" />
+    <ClCompile Include="Game\CParticleObject.cpp" />
+    <ClCompile Include="Game\CReplay.cpp" />
+    <ClCompile Include="Game\CShadows.cpp" />
+    <ClCompile Include="Game\CSprite.cpp" />
+    <ClCompile Include="Game\CTimeCycle.cpp" />
+    <ClCompile Include="Game\CTimer.cpp" />
+    <ClCompile Include="Game\CTxdStore.cpp" />
+    <ClCompile Include="Game\CVector.cpp" />
+    <ClCompile Include="Game\CVector2D.cpp" />
+    <ClCompile Include="Game\CWaterCreature.cpp" />
+    <ClCompile Include="Game\CWaterLevel.cpp" />
+    <ClCompile Include="Game\CWeather.cpp" />
+    <ClCompile Include="Game\CWorld.cpp" />
+    <ClCompile Include="Game\Game.cpp" />
+    <ClCompile Include="Game\RenderWare.cpp" />
+    <ClCompile Include="inc\IniReader.cpp" />
+    <ClCompile Include="settings.cpp" />
+    <ClCompile Include="Tweak.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="waterlevel.cpp" />
+    <ClCompile Include="waterlevelGTA3.cpp" />
+    <ClCompile Include="WaterLevelPS2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CWaterLevelEx.h" />
+    <ClInclude Include="Errors.h" />
+    <ClInclude Include="Game\CBoat.h" />
+    <ClInclude Include="Game\CCam.h" />
+    <ClInclude Include="Game\CCamera.h" />
+    <ClInclude Include="Game\CClock.h" />
+    <ClInclude Include="Game\CColPoint.h" />
+    <ClInclude Include="Game\CCullZones.h" />
+    <ClInclude Include="Game\cDMAudio.h" />
+    <ClInclude Include="Game\CDraw.h" />
+    <ClInclude Include="Game\CEntity.h" />
+    <ClInclude Include="Game\CFileMgr.h" />
+    <ClInclude Include="Game\CFire.h" />
+    <ClInclude Include="Game\CGame.h" />
+    <ClInclude Include="Game\CGeneral.h" />
+    <ClInclude Include="Game\CMatrix.h" />
+    <ClInclude Include="Game\CMBlur.h" />
+    <ClInclude Include="Game\CModelInfo.h" />
+    <ClInclude Include="Game\COcclusion.h" />
+    <ClInclude Include="Game\CParticle.h" />
+    <ClInclude Include="Game\CParticleObject.h" />
+    <ClInclude Include="Game\cParticleSystemMgr.h" />
+    <ClInclude Include="Game\CPed.h" />
+    <ClInclude Include="Game\CPhysical.h" />
+    <ClInclude Include="Game\CPlaceable.h" />
+    <ClInclude Include="Game\CRect.h" />
+    <ClInclude Include="Game\CReplay.h" />
+    <ClInclude Include="Game\CRGBA.h" />
+    <ClInclude Include="Game\CShadows.h" />
+    <ClInclude Include="Game\CSprite.h" />
+    <ClInclude Include="Game\CTimeCycle.h" />
+    <ClInclude Include="Game\CTimer.h" />
+    <ClInclude Include="Game\CTxdStore.h" />
+    <ClInclude Include="Game\CVector.h" />
+    <ClInclude Include="Game\CVector2D.h" />
+    <ClInclude Include="Game\CVehicle.h" />
+    <ClInclude Include="Game\CWaterCreatures.h" />
+    <ClInclude Include="Game\CWaterLevel.h" />
+    <ClInclude Include="Game\CWeather.h" />
+    <ClInclude Include="Game\CWorld.h" />
+    <ClInclude Include="Game\Game.h" />
+    <ClInclude Include="Game\RenderWare.h" />
+    <ClInclude Include="Game\types.h" />
+    <ClInclude Include="inc\IniReader.h" />
+    <ClInclude Include="inc\String.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="settings.h" />
+    <ClInclude Include="Tweak.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="waterlevel.h" />
+    <ClInclude Include="waterlevelGTA3.h" />
+    <ClInclude Include="WaterLevelPS2.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
