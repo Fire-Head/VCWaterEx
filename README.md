@@ -6,6 +6,8 @@ Requirements:
 * debugmenu.dll (https://github.com/aap/debugmenu)
 * SkyGFX (https://github.com/aap/skygfx_vc)
 * skygfx.ini
-	texblendSwitch=0
-	texgenSwitch=0
-	ps2Water=0
+```
+texblendSwitch=0
+texgenSwitch=0
+ps2Water=0
+```
